@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+</head>
+<style>
+html,body{
+width: 100%;
+overflow-x: hidden;
+}
+html {
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 100vw;
+  min-height: 200vh;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+body {
+  font-size: 16px;
+  font-family: sans, sans-serif;
+  color: #000000;
+}
+
+a {
+  color:#ff7504;
+  font-family:arimo;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color:transparent;
+  box-sizing: border-box;
+  padding: 25px 24px;
+  transition: background-color 0.2s ease-out;
+  z-index:99;
+  color:#fb8929;
+}
+
+nav span {
+  font-weight:bold;
+  letter-spacing: .085em;
+}
+
+nav button {
+  position: absolute;
+  top: 0;
+  transform: translateY(50%);
+  right: 0;
+  min-height: 1.5em;
+  min-width: 80px;
+  background-color:#fb8929 ;
+  color: #222;
+  border: 0px;
+  border-radius: 2px;
+  margin-right: 18px;
+  text-transform: uppercase;
+}
+
+nav.scroll {
+  background-color: #57463a;
+  color: #fb8929;
+  opacity: 0.7;
+}
+
+body > header {
+  margin-top: 4.7em;
+}
+
+
+.header {
+  position: fixed;
+z-index: 1000;
+height: 100px;
+  width: 100%; 
+background: rgba(34,34,34,0.25);
+padding: 18px;
+-webkit-transition: all ease-out .5s;
+  -moz-transition: all ease-out .5s;
+  -o-transition: all ease-out .5s;
+  transition: all ease-out .5s;
+}
+
+
+   
+}
+.color2{
+ color:#ed9750;
+   text-spacing:4px;
+   }
+ 
+.img{
+margin-left:50px;
+}
+.fa {
+    padding: 15px;
+    font-size: 20px;
+    color: #ffffff;
+}
+.caro{
+margin-left:auto;
+margin-right:auto;
+}
+ .navbar-default {
+      background-color:transparent !important;
+      border-color:transparent;
+      background-image:none;
+      box-shadow:none;  
+ }
+ ul {
+    width: 70%;
+    margin: auto;
+}
+ .img{
+ margin-left:65px;
+ padding:10px;
+ }
+ .ws {
+ word-spacing:7px;
+ letter-spacing:4px;
+ }
+ .navbar-inverse .navbar-nav>li>a {
+    color: #f37914;
+}
+.parallax {
+  background-image: url("op.jpg");
+  min-height: 300px; 
+  opacity:0.6;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom:20px;
+}
+.pic100{
+width:100%
+}
+.section {
+  padding: 30px 0;
+  color: #333;
+}
+.section .top-side {
+  text-align: center;
+}
+.section .top-side .title {
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-block;
+}
+.section .top-side .title:after {
+  content: "";
+  display: block;
+  width: 50%;
+  border-bottom: 1px solid #494949;
+  margin: 8px auto;
+}
+.section .top-side h2 {
+  font-weight: 700;
+}
+.section.portfolio .filters {
+  text-align: center;
+  margin-top: 50px;
+}
+.section.portfolio .filters ul {
+  padding: 0;
+}
+.section.portfolio .filters ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 20px 30px;
+  cursor: pointer;
+  position: relative;
+}
+.section.portfolio .filters ul li:after {
+  content: "";
+  display: block;
+  width: calc(0% - 60px);
+  position: absolute;
+  height: 2px;
+  background: #333;
+  transition: width 350ms ease-out;
+}
+.section.portfolio .filters ul li:hover:after {
+  width: calc(100% - 60px);
+  transition: width 350ms ease-out;
+}
+.section.portfolio .filters ul li.active:after {
+  width: calc(100% - 60px);
+}
+.section.portfolio .filters-content {
+  margin-top: 50px;
+}
+.section.portfolio .filters-content .show {
+  opacity: 1;
+  visibility: visible;
+  transition: all 350ms;
+}
+.section.portfolio .filters-content .hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 350ms;
+}
+.section.portfolio .filters-content .item {
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.section.portfolio .filters-content .item .p-inner {
+  padding: 20px 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.section.portfolio .filters-content .item .p-inner h5 {
+  font-size: 15px;
+}
+.section.portfolio .filters-content .item .p-inner .cat {
+  font-size: 13px;
+}
+.section.portfolio .filters-content .item img {
+  width: 100%;
+}
+
+		 
+		 
+		 .sticker{
+		 padding:30px;
+		} 
+		.abc{
+		background-image: url("map1.jpg");
+		background-color:#000000;
+		padding:60px;
+		color:#a4a4a4;
+		width:100%;
+		height:550px;
+		}
+		.picpad{
+		}
+		.form-control {
+         display: block;
+		 font-family:arimo;
+		 color:grey;
+		 font-style:italic;
+         width: 100%;
+         height: 34px;
+         padding: 10px 20px;
+         font-size: 14px;
+         line-height: 1.42857143;
+         color: #555;
+         background-color: transparent;
+         background-image: none;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+		 }
+		 .navbar-brand {
+    float: left;
+    height: 59px;
+    padding: 2px 15px;
+    font-size: 39px;
+    line-height: 20px;
+    margin-left: 92px;
+}
+.rex {
+  border-radius: 40px;
+  background: #b07645;
+  width: 50%;
+  font-size: 20px;
+  color:#fff;
+  padding-top: 10px;
+  padding-bottom:40px;
+  margin-left:85px;
+  margin-top:20px;
+}	
+ .rex:hover{
+    background:transparent;
+     border: 2px solid #E1642E!important;
+	 color:white;
+	 text-decoration:none;
+	 }
+.footer {
+    background: #3d3d3d;
+    float: left;
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+	color:white;
+	}
+	.con{
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.con .con-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 87%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  background-color:#C37021;
+}
+
+.con:hover .con-overlay {
+  opacity: 0.7;
+}
+
+.con-image {
+  width: 100%;
+}
+
+.con-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.con:hover .con-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.con-details h3 {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.con-details p {
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.multi-item-carousel .carousel-inner > .item {
+  transition: 0.6s ease-in-out all;
+}
+.multi-item-carousel .carousel-inner .active.left {
+  left: -33%;
+}
+.multi-item-carousel .carousel-inner .active.right {
+  left: 33%;
+}
+.multi-item-carousel .carousel-inner .next {
+  left: 33%;
+}
+.multi-item-carousel .carousel-inner .prev {
+  left: -33%;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .multi-item-carousel .carousel-inner > .item {
+    transition: 0.6s ease-in-out all;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    -webkit-perspective: none;
+    -webkit-transform: none!important;
+    transform: none!important;
+  }
+}
+.multi-item-carousel .carouse-control.left,
+.multi-item-carousel .carouse-control.right {
+  background-image: none;
+}
+
+
+
+
+.deal-detail{
+    background:none repeat scroll 0 0 #fff;
+    float: left;
+	width:80%;
+	margin-left: 14%;
+	margin-right: 15%;
+	margin-top: -10%;
+	padding: 25px 10px;
+	position: relative;
+	z-index: 1;
+	text-align:center;
+	max-width:304px;
+	}
+  .deal-detail h4{
+    color:#bo7645;
+    margin-top:-15px;
+    font-size: 23px;
+    text-transform: uppercase;
+    font-weight:600;
+}
+
+.container{
+  padding: 1em 0;
+  float: left;
+  width: 100%;
+}
+.content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: transparent;
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  overflow:hidden;
+  left: 5%;
+  top: 5%;
+  opacity:0;
+  border:3px solid #FFF;
+  margin-bottom:15px;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 0.5;
+  background:#E15007;
+}
+
+.content-image{
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+.content-details p{
+  color: #fff;
+  font-size: 14px;
+}
+
+.fadeIn-bottom{
+  top: 80%;
+}
+.form-control1 {
+     display: block;
+     width: 35%;
+     padding: 6px 12px;
+	 margin-left:114px;
+     font-size: 14px;
+     line-height: 1.42857143;
+     color: #555;
+     background-color: #FFF;
+	 opacity:0.7;
+     background-image: none;
+     border: 1px solid #ccc;
+     border-radius: 70px;
+          }
+	.form-control1:hover{
+ 	 color:#E55F1B;
+	 }
+	 .hpad{
+	 padding:4px;
+	 }
+		
+
+
+</style>
+<body id="myPage" data-target=".navbar" data-offset="50">
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"><img src="shreya_logo.png" alt="logo" width="50" height="60"></a>
+    </div>
+    <div class="collapse navbar-collapse r2" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right navbar">
+        <img src="SMART.png" alt="logo" width="50" height="60">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about us">ABOUT US</a></li>
+        <li><a href="#gallery">GALLERY</a></li>
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">TOURS
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Domestic</a></li>
+            <li><a href="#">International</a></li>
+            <li><a href="#">Weekend Gatways</a></li> 
+          </ul>
+        </li>	
+        <li><a href="#our clientele">OUR CLIENTELE</a></li>
+        <li><a href="#contact us">CONTACT US</a></li>
+
+<li><a href=<i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+<li><a href=<i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+<li><a href=<i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+
+
+</ul>
+    </div>
+ </div>
+</nav>
+
+ 
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+	  <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="tower.jpg" alt="Tower" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="statue.jpg" alt="Statue" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="temple.jpg" alt="Temple" style="width:100%;">
+      </div>
+	
+	<div class="item">
+        <img src="bridge.jpg" alt="Bridge" style="width:100%;">
+      </div>
+    </div>
+
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+<br>
+<br>
+<div class="container">
+<center><p style="font-family:robotoslab;padding:20px" class="ws">BOOK THE TRIP AND ENJOY SEASON</p>
+<h1><strong>PREMIUM <span style="color:#b07645">PACKAGES</span></strong></h1>
+<p>Premium tour packages which are superlative in every manner!</p>
+<p>With the most competitive prices available.</p>
+</center>
+</div>
+<br>
+ <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="col-xs-4">
+			<div class="content">
+			<div class="content-overlay"></div>
+			<a href="#1"><img src="bali.jpg" class="img-responsive"></a>
+			<div class="content-details fadeIn-bottom">
+			<p class="content-text">Bali...</p>
+			<input type="button" class="form-control1" value="View Package">
+			</div>
+			</div>
+			<div class="deal-detail"><h4>BALI</h4>
+			</div>
+			</div>
+			</div>
+          <div class="item">
+            <div class="col-xs-4">
+			<div class="content">
+			<div class="content-overlay"></div>
+			<a href="#1"><img src="italy.jpg" class="img-responsive"></a>
+          <div class="content-details fadeIn-bottom">
+		  <p class="content-text">Italy...</p>
+			<input type="button" class="form-control1" value="View Package">
+			</div>
+			</div>
+			<div class="deal-detail"><h4>ITALY</h4>
+			</div>
+			</div>
+			</div>
+		  
+          <div class="item">
+            <div class="col-xs-4">
+			<div class="content">
+			<div class="content-overlay"></div>
+			<a href="#1"><img src="florence.jpg" class="img-responsive"></a>
+          <div class="content-details fadeIn-bottom">
+		  <p class="content-text">Florence...</p>
+			<input type="button" class="form-control1" value="View Package">
+			</div>
+			</div>
+			<div class="deal-detail"><h4>FLORENCE</h4>
+			</div>
+			</div>
+			</div>
+          <div class="item">
+            <div class="col-xs-4">
+			<div class="content">
+			<div class="content-overlay"></div>
+			<a href="#1"><img src="greece.jpg" class="img-responsive"></a>
+            <div class="content-details fadeIn-bottom">
+		  <p class="content-text hpad">"Greece is one of the most popular tourist destinations in the world. With over....."</p>
+			<input type="button" class="form-control1" value="View Package">
+			</div>
+			</div>
+			<div class="deal-detail"><h4>GREECE</h4>
+			</div>
+			</div>
+			</div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container line">
+<center><p style="font-family:robotoslab;padding:20px" class="ws">BOOK THE TRIP AND ENJOY SEASON</p>
+<div class="spa">
+<h1><strong>ABOUT <span style="color:#b07645">SHREYA TOURS<br>& TRAVELS</span></strong></h1>
+</div>
+<p style="font-family:arimo;font-size:16px;color:#6c6c6c">Shreya Tours & Travels is a leading Tours & Travel website company based in <br>
+Mumbai. We provide integrated travel experience to expedition enthusiasts across the <br>
+world !</p>
+</center>
+</div>
+<br>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-6">
+<h3>TRAVEL MORE. STRESS LESS</h3>
+<p style="font-size:18px">Shreya Tours & Travels is a full-service travel company dedicated at providing corporate, leisure, meeting & management services. We provide integrated travel experience to expedition enthusiasts across the world! Our 8 years of experience has earned us a nice in the Travel industry. <br><br>Our company provides services in all travel related activities like Airline ticketing, Rail ticketing, Car hire, Hotel booking, Passport & VISA services. We aim at providing quality service to our valuable clients, round the clock, at very competitive rates. We have triumphantly served our clients with the most memorable experience; this has helped us built a loyal base of customers who vouch by our services. With this website we aspire to grow our reach far & beyond, and cater more and more voyagers who are looking for a travel rush in India and abroad. From beautiful beaches, to historic masterpieces, to jungles, wildlife and man-made future cities.</p>
+
+
+</div>
+<div class="col-sm-6">
+<img src="po.jpg" alt="img">
+</div>
+</div>
+</div>
+
+
+<div class="parallax col-sm-12"></div>
+
+<section class="portfolio section">
+    
+    
+    <div class="filters">
+      <ul>
+        <li class="active" data-filter="*">ALL</li>
+        <li data-filter=".international">INTERNATIONAL</li>
+        <li data-filter=".domestic">DOMESTIC</li>
+        <li data-filter=".weekendgateways">WEEKEND GATEWAYS</li>
+       </ul>
+    </div>
+    
+    <div class="filters-content">
+      <div class="row grid">
+        <div class="col-sm-2 all domestic">
+		<div class="con">
+		<div class="con-overlay"></div>
+          <div class="item">
+            <img src="karnataka.jpg" alt="karnataka" width="300" height="200">
+           </div>
+          <div class="con-details fadeIn-bottom">
+		  <p><i class="fa fa-eye fa-4x"></i></p>
+		  <a href="karnataka.jpg">Karnataka</a>
+		  </div>
+		  </div>
+		  </div>
+		  
+        
+        <div class="col-sm-2 all international">
+		<div class="con">
+		<div class="con-overlay"></div>
+          <div class="item">
+            <img src="bali.jpg" alt="bali" width="300" height="200">
+            </div>
+          <div class="con-details fadeIn-bottom">
+		  <p><i class="fa fa-eye fa-4x"></i></p>
+		  <a href="bali.jpg">Bali</a>
+		  </div>
+		  </div>
+		  </div>
+		<div class="col-sm-2 all international">
+		<div class="con">
+		<div class="con-overlay"></div>
+          <div class="item">
+            <img src="florence.jpg" alt="florence" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="florence.jpg">Florence</a>
+			</div>
+			</div>
+           </div>
+		   
+		  
+		  <div class="col-sm-2 all weekendgateways">
+		  <div class="con">
+		  <div class="con-overlay"></div>
+          <div class="item">
+            <img src="alibaug.jpg" alt="alibaug" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="alibaug.jpg">Alibaug</a>
+			</div>
+          </div>
+		  </div>
+		  <div class="col-sm-2 all international">
+          <div class="con">
+		  <div class="con-overlay"></div>
+		  <div class="item">
+            <img src="greece.jpg" alt="greece" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="greece.jpg">Greece</a>
+			</div>
+          </div>
+		  </div>
+		  <div class="col-sm-2 all international">
+          <div class="con">
+		  <div class="con-overlay"></div>
+		  <div class="item">
+            <img src="dubai.jpg" alt="dubai" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="dubai.jpg">Dubai</a>
+			</div>
+          </div>
+		  </div>
+		  <div class="col-sm-2 all international">
+          <div class="con">
+		  <div class="con-overlay"></div>
+		  <div class="item">
+            <img src="italy.jpg" alt="italy" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="italy.jpg">Italy</a>
+			</div>
+          </div>
+		  </div>
+		  <div class="col-sm-2 all weekendgateways">
+          <div class="con">
+		  <div class="con-overlay"></div>
+		  <div class="item">
+            <img src="matheran.jpg" alt="matheran" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="matheran.jpg">Matheran</a>
+			</div>
+			</div>
+			</div>
+          <div class="col-sm-2 all domestic">
+		  <div class="con">
+		  <div class="con-overlay"></div>
+          <div class="item">
+            <img src="rajasthan.jpg" alt="rajasthan" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="rajasthan.jpg">Rajasthan</i></p>
+			</div>
+			</div>
+          </div>
+		  
+		  <div class="col-sm-2 all weekendgateways">
+		  <div class="con">
+		  <div class="con-overlay"></div>
+          <div class="item">
+            <img src="lavasa.jpg" alt="lavasa" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="lavasa.jpg">Lavasa</i></p>
+			</div>
+			</div>
+          </div>
+		  
+		  <div class="col-sm-2 all international">
+		  <div class="con">
+		  <div class="con-overlay"></div>
+          <div class="item">
+            <img src="hongkong.jpg" alt="hongkong" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+          <a href="hongkong.jpg">Hongkong</i></p>
+		  </div>
+		  </div>
+		  </div>
+		  
+		  <div class="col-sm-2 all domestic">
+		  <div class="con">
+		  <div class="con-overlay"></div>
+          <div class="item">
+            <img src="himachal pradesh.jpg" alt="himachal pradesh" width="300" height="200">
+            </div>
+			<div class="con-details fadeIn-bottom">
+			<p><i class="fa fa-eye fa-4x"></i></p>
+			<a href="himachal pradesh.jpg">Himachal Pradesh</a></p>
+			</div>
+          </div>
+		  </div>
+          </div>
+        </div>
+     
+  </section>
+  
+<div class="container line">
+<div class="spa">
+<center><p style="font-family:robotoslab;padding:20px" class="ws">BOOK THE TRIP AND ENJOY SEASON</p>
+<h1><strong>OUR <span style="color:#b07645">CLIENTELE</span></strong></h1>
+</center>
+</div>
+</div>  
+
+
+
+
+
+
+<div class="abc">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-5">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.4818756552077!2d72.95308406485286!3d19.17414428703173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8e53ccf020f%3A0xc395e430747aa20f!2sOneRoof+Technologies+LLP!5e0!3m2!1sen!2sin!4v1559562234756!5m2!1sen!2sin" width="100%" height="350px" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+<div class="col-md-3">
+<h1>CONTACT</h1>
+<h2><span style="color:#b07645">US NOW</span></h2>
+<div class="ls">
+<p>We are looking forward to hear from you. Reach out to us through mail, call or drop down at the address mentioned below.</p>
+<div class="col-sm-3">
+<p><i class="fa fa-map-marker"></i><p></div>
+<div class="col-sm-9">
+<p>  106/107,Room No.18,Wadala
+Road No.7A, Near Andhra School,
+Wadala (W), Mumbai - 400031</p></div>
+<div class="col-sm-3">
+<p><i class="fa fa-phone-square"></i></div> 
+<div class="col-sm-9">
+<p>022 24161702 /<br> 022 24134486</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group frm">
+      <input type="text" class="form-control" id="usr" placeholder="Name">
+    </div>
+	<div class="form-group frm">
+      <input type="text" class="form-control" id="usr" placeholder="Email">
+    </div>
+	<div class="form-group frm">
+      <input type="text" class="form-control" id="usr" placeholder="Subject">
+    </div>
+	<div class="form-group frm">
+      <textarea class="form-control" rows="7" id="comment" placeholder="Details"></textarea>
+	  </div>
+	  <input type="button" class="form-control rex" value="Contact Now">
+  </form>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+<div class="footer">
+<p>Shreya Tours and Travels-Copyright 2019. Powered by <a href="http://onerooftech.com/">ort</a></p>
+</div>
+
+    
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+<script>
+window.onscroll = () => {
+const nav = document.querySelector('#navbar');
+if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
+};
+$('.filters ul li').click(function(){
+  $('.filters ul li').removeClass('active');
+  $(this).addClass('active');
+  
+  var data = $(this).attr('data-filter');
+  $grid.isotope({
+    filter: data
+  })
+});
+
+var $grid = $(".grid").isotope({
+  itemSelector: ".all",
+  percentPosition: true,
+  masonry: {
+    columnWidth: ".all"
+  }
+})
+
+
+$('.multi-item-carousel').carousel({
+  interval: 1800
+});
+
+
+$('.multi-item-carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  } else {
+  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+</script>
+</body>
+</html>
+
+
+
+      
